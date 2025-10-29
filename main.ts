@@ -10,8 +10,8 @@ basic.showIcon(IconNames.Happy)
 basic.pause(1000)
 
 // variables
-let randomNumberTwo = 0
-let randomNumber = 0
+let randomNumberTwo: number = 0
+let randomNumber: number = 0
 randomNumber = randint(0, 99)
 randomNumberTwo = randint(0, 99)
 
@@ -23,8 +23,15 @@ input.onButtonPressed(Button.B, function () {
 })
 input.onGesture(Gesture.Shake, function () {
     if (randomNumber < randomNumberTwo) {
-        basic.showString("1st < 2nd")
+        
+        basic.showNumber(randomNumber)
+        basic.showString("<")
+        basic.showNumber(randomNumberTwo)
+      
     } else {
-        basic.showString("1st > 2nd")
+        basic.showNumber(randomNumber)
+        basic.showString(">")
+        basic.showNumber(randomNumberTwo)
+
     }
 })
